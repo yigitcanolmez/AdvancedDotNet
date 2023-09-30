@@ -1,8 +1,27 @@
+using Microsoft.AspNetCore.WebUtilities;
+
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
 app.Run(async (HttpContext context) =>
 {
+    if (context.Request.Body != null)
+    {
+        StreamReader reader = new(context.Request.Body);
+        var getBody = await reader.ReadToEndAsync();
+
+        if (getBody.Contains("&"))
+        {
+            //& ile query gönderildiyse
+            QueryHelpers.ParseQuery(getBody);//querystring olarak gönderilen body'i dictionary yapıya mapledim
+             
+        }
+       
+
+        Console.WriteLine(getBody);
+    }
+    
+
     context.Request.Headers["Access-Control-Allow-Origin"] = "asd12";
     context.Response.Headers["KEY"] = "VALUE";
     context.Response.Headers["Server"] = "Heyyo";
