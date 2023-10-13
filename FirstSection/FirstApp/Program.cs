@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.WebUtilities;
+using Microsoft.Extensions.Primitives;
 
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
@@ -12,9 +13,10 @@ app.Run(async (HttpContext context) =>
 
         if (getBody.Contains("&"))
         {
-            //& ile query gönderildiyse
-            QueryHelpers.ParseQuery(getBody);//querystring olarak gönderilen body'i dictionary yapıya mapledim
-             
+           //& ile query gönderildiyse
+           Dictionary<string, StringValues> parseQuery = QueryHelpers.ParseQuery(getBody);//querystring olarak gönderilen body'i dictionary yapıya mapledim
+          //StringValues kullanma sebebim aynı key ile birden fazla değer gönderilebilir.
+          // string olarak kullansaydım o değer okunmayabilirdi
         }
        
 
