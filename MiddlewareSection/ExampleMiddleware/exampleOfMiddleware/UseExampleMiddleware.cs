@@ -8,8 +8,11 @@ namespace exampleOfMiddleware
 		{
             app.Use(async (HttpContext context, RequestDelegate next) =>
             {
-                await context.Response.WriteAsync("First Middleware!");
-
+                if (context.Request.Query.ContainsKey("firstName") && context.Request.Query.ContainsKey("lastName"))
+                {
+                    var write = context.Request.Query["firstName"] + " " + context.Request.Query["lastName"];
+                    await context.Response.WriteAsync(write);
+                }
                 await next(context);
             });
 
