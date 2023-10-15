@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>df6b8196-2242-4fb0-b765-7bd0e0f280ab</UserSecretsId>
+  </PropertyGroup>
+
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
+  <ItemGroup>
+    <Folder Include="myRoot\" />
+    <Folder Include="wwwroot\" />
+    <Folder Include="myWebRoot\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="myRoot\" />
+    <None Remove="myWebRoot\" />
+    <None Remove="myWebRoot\OCELOT.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="myWebRoot\OCELOT.png">
+      <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+</Project>
