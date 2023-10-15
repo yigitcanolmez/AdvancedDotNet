@@ -31,7 +31,19 @@ app.UseEndpoints(endpoints =>
         await context.Response.WriteAsync("Hello from Map 2");
     });
 });//
+/*
+ * constraint types kısıtlamak için kullanılır.
+ * {employeeName:string} sadece stringleri kbul eder gibiiiiiiii
+*   {employeeName:minlength(3)}
+*   {employeeName:maxlength(7)}
+*   {employeeName:length(3,9)}
+*   {employeeName: length(3)} 3 olmalı
+*   {age:min(12)} min 12
+*   {age:max(72)} max 72
+*   {age:range(12,72)}  12 72 arasında 
+*   {name:alpha} A-Z, a-z olacak şekilde yazılabilir.
 
+*/
 app.Run(async (HttpContext context) =>
 {
     await context.Response.WriteAsync("Could not found the page!");
