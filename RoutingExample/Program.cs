@@ -1,6 +1,12 @@
 ﻿using Microsoft.AspNetCore.Http;
+using RoutingExample.CustomConstraints;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddRouting(opt =>
+{
+    opt.ConstraintMap.Add("months", typeof(MonthsCustomConstraint));
+});
 
 var app = builder.Build();
 
@@ -30,6 +36,12 @@ app.UseEndpoints(endpoints =>
     {
         await context.Response.WriteAsync("Hello from Map 2");
     });
+
+    endpoints.MapPatch("/sales-report/{month:months}", async (context) =>
+    {
+        await context.Response.WriteAsync("Hello");
+    });
+
 });//
 /*
  * constraint types kısıtlamak için kullanılır.
