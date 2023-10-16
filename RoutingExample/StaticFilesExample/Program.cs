@@ -14,7 +14,9 @@ app.UseStaticFiles(new StaticFileOptions()
 });
 
 //http://localhost:5175/ocelot.png şeklinde yazarsan static file açılır:)))))))
+
 app.UseRouting();
+
 
 app.UseEndpoints(endpoints =>
 {
