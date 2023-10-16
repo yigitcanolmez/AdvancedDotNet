@@ -19,6 +19,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RoutingExample", "RoutingEx
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StaticFilesExample", "RoutingExample\StaticFilesExample\StaticFilesExample.csproj", "{AD382744-0A74-41C3-B224-51A79D0E744D}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ControllerSection", "ControllerSection", "{433F0727-F946-4221-9B6D-D7D20073D897}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControllerExample", "ControllerExample\ControllerExample.csproj", "{5392E445-E661-4E96-A6DB-26FD88EFF336}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,10 @@ Global
 		{AD382744-0A74-41C3-B224-51A79D0E744D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD382744-0A74-41C3-B224-51A79D0E744D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD382744-0A74-41C3-B224-51A79D0E744D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5392E445-E661-4E96-A6DB-26FD88EFF336}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5392E445-E661-4E96-A6DB-26FD88EFF336}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5392E445-E661-4E96-A6DB-26FD88EFF336}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5392E445-E661-4E96-A6DB-26FD88EFF336}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -55,6 +63,7 @@ Global
 		{5D198B60-DBAB-4B81-97D0-6142380FB33F} = {EB924906-5D24-4523-B86E-381EBF518FBF}
 		{DD2A8F50-6530-4A7B-8895-7E6B0640A060} = {DF503216-5CC7-4524-9551-5A02B733AA1A}
 		{AD382744-0A74-41C3-B224-51A79D0E744D} = {DF503216-5CC7-4524-9551-5A02B733AA1A}
+		{5392E445-E661-4E96-A6DB-26FD88EFF336} = {433F0727-F946-4221-9B6D-D7D20073D897}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {762B8461-EC30-441A-9B27-0C39887353D4}
